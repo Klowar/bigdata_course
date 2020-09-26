@@ -5,8 +5,9 @@ apt-get upgrade -y
 
 apt-get install -y openjdk-8-jdk
 
-su ubuntu
-cd ~
+mkdir -p /home/cassandra
+
+cd /home/cassandra
 
 wget https://apache-mirror.rbc.ru/pub/apache/cassandra/3.11.8/apache-cassandra-3.11.8-bin.tar.gz
 tar -xzvf apache-cassandra-3.11.8-bin.tar.gz
