@@ -1,7 +1,19 @@
 #!/bin/bash
 
-sudo apt-get update
-sudo apt-get upgrade
+apt-get update -y
+apt-get upgrade -y
 
-wget http://mirror.linux-ia64.org/apache/cassandra/3.11.8/apache-cassandra-3.11.8-bin.tar.gz
+apt-get install -y openjdk-8-jdk
+
+su ubuntu
+cd ~
+
+wget https://apache-mirror.rbc.ru/pub/apache/cassandra/3.11.8/apache-cassandra-3.11.8-bin.tar.gz
 tar -xzvf apache-cassandra-3.11.8-bin.tar.gz
+
+git clone https://github.com/Klowar/bigdata_course.git
+
+cat bigdata_course/cassandra.yaml > apache-cassandra-3.11.8/conf/cassandra.yaml
+
+cd apache-cassandra-3.11.8
+./bin/cassandra
