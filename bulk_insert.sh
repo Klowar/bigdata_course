@@ -1,12 +1,11 @@
 #!/bin/bash
 
 echo "Generating Rows for cassandra"
-echo "" > inserts.cql
 
-for i in {1..100000}
+for i in {900000..1000000}
 do
     echo $i
     md5string=`echo -n ${i} | md5 | awk '{ print $1 }'`
-    INSERT_QUERY="insert into table(id,name) values(${i},\"${md5string}\");"
-    echo $INSERT_QUERY >> inserts_0.cql
+    INSERT_QUERY="insert into TTEST.test(id,name) values(${i},\"${md5string}\");"
+    echo $INSERT_QUERY >> data/inserts_9.cql
 done
