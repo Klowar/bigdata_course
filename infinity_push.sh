@@ -3,6 +3,7 @@
 echo "Pushing Rows to cassandra"
 i=1000001
 while true; do
+    i=$(($i+1))
     echo $i
     temp=$(($i%10))
     md5string=`echo -n ${i} | md5 | awk '{ print $1 }'`
