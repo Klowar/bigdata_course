@@ -12,14 +12,14 @@ CREATE (p:Role {name: "Knight"});
 // Create relations
 // Both directions
 MATCH (p:Person {name: "Jennifer"}), (g:Person {name: "Geralt"})
-    CREATE (p)-[:LIKES]->(g),
+    CREATE (p)-[:LIKES]->(g)
     CREATE (p)<-[:LIKES]-(g);
 MATCH (g:Person {name: "Geralt"}), (l:Person {name: "Lutik"})
-    CREATE (g)-[:FRIENDS_WITH]->(l),
+    CREATE (g)-[:FRIENDS_WITH]->(l)
     CREATE (g)<-[:FRIENDS_WITH]-(l);
 MATCH (p:Person {name: "Geralt"}), (g:Person {name: "Kagir Aep Kaelax"})
-    CREATE (p)-[:FRIENDS_WITH]->(g),
-    CREATE (p)<-[:FRIENDS_WITH]-(g)
+    CREATE (p)-[:FRIENDS_WITH]->(g)
+    CREATE (p)<-[:FRIENDS_WITH]-(g);
 MATCH (p:Person {name: "Geralt"}), (g:Person {name: "Ciri"})
     CREATE (p)-[:PARENT_OF]->(g);
 MATCH (p:Person {name: "Jennifer"}), (g:Person {name: "Ciri"})
